@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "PubMed IF & Scholar Citation Sorter",
+  "version": "1.0.1",
+  "description": "Show journal impact factors on PubMed and citations on Google Scholar, with page-level sorting controls.",
+  "permissions": [],
+  "host_permissions": [
+    "https://pubmed.ncbi.nlm.nih.gov/*",
+    "https://scholar.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pubmed.ncbi.nlm.nih.gov/*",
+        "https://scholar.google.com/scholar*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "css": [
+        "src/styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/chunks/manifest.json",
+        "data/chunks/journals.part*.txt"
+      ],
+      "matches": [
+        "https://pubmed.ncbi.nlm.nih.gov/*",
+        "https://scholar.google.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PubMed IF & Scholar Citation Sorter"
+  }
+}
