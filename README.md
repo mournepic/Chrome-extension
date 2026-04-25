@@ -22,11 +22,13 @@ Chrome extension for showing journal impact factors on PubMed and citation count
 
 ## Data
 
-The bundled journal database was extracted from and compressed from:
+This local workspace already contains generated journal data chunks in `data/chunks`, so it can be loaded directly in Chrome.
+
+The GitHub repo keeps the generator script instead of committing the generated chunks. After cloning from GitHub, place the PDF at:
 
 `C:\Users\such_\Downloads\JCRI-mpact-Factors_2025.pdf`
 
-To rebuild the chunked data files from the PDF, install `requirements.txt` and run:
+Then install `requirements.txt` and run:
 
 ```powershell
 python scripts/build_journal_chunks.py
